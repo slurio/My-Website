@@ -1,6 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 
+// use material UI
+// routes
+// have hidden right nav bar ?
+// include work tab / about me tab / fashion tab / resume tab / contact tab(email)
+
 function App() {
   return (
     <div className="App">
