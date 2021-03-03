@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import ThreadLogo from '../assets/thread_logo.png';
 import BreakupSpaceLogo from '../assets/breakup_space_logo.png';
+import ViaggamoLogo from '../assets/viaggamo_logo.png';
+import ScribbleLogo from '../assets/scribble_logo.png';
 
 function Work() {
     return(
@@ -16,11 +18,11 @@ function Work() {
                 <Header>The Thread</Header>
             </Project>
             <Project>
-                <Image src={ThreadLogo} alt='The Thread Logo'/>
+                <Image src={ViaggamoLogo} alt='Viaggamo Logo'/>
                 <Header>Viaggamo</Header>
             </Project>
             <Project>
-                <Image src={ThreadLogo} alt='The Thread Logo'/>
+                <Image src={ScribbleLogo} alt='Scribble Logo'/>
                 <Header>Scribbles</Header>
             </Project>
         </ProjectContainer>
