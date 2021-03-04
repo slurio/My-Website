@@ -11,28 +11,28 @@ function Work() {
         <>
         <ProjectContainer>
             <Project>
-                <NavLink to='/work/breakupspace'>
+                <WorkLink to='/work/breakupspace'>
                     <Image src={BreakupSpaceLogo} alt='Breakup Space Logo'/>
                     <Header>Breakup Space</Header>
-                </NavLink>
+                </WorkLink>
             </Project>
             <Project>
-                <NavLink to='/work/thethread'>
+                <WorkLink to='/work/thethread'>
                     <Image src={ThreadLogo} alt='The Thread Logo'/>
                     <Header>The Thread</Header>
-                </NavLink>
+                </WorkLink>
             </Project>
             <Project>
-                <NavLink to='/work/viaggamo'>
+                <WorkLink to='/work/viaggamo'>
                     <Image src={ViaggamoLogo} alt='Viaggamo Logo'/>
                     <Header>Viaggamo</Header>
-                </NavLink>
+                </WorkLink>
             </Project>
             <Project>
-                <NavLink to='/work/scribble'>
+                <WorkLink to='/work/scribble'>
                     <Image src={ScribbleLogo} alt='Scribble Logo'/>
                     <Header>Scribble</Header>
-                </NavLink>
+                </WorkLink>
             </Project>
         </ProjectContainer>
         </>
@@ -54,6 +54,9 @@ const Project = styled.div`
     &:hover {
         cursor: pointer;
     }
+`
+const WorkLink = styled(NavLink)`
+    text-decoration: none;
 `
 
 const Image = styled.img`
