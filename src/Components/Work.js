@@ -13,26 +13,26 @@ function Work() {
             <Project>
                 <NavLink to='/work/breakupspace'>
                     <Image src={BreakupSpaceLogo} alt='Breakup Space Logo'/>
+                    <Header>Breakup Space</Header>
                 </NavLink>
-                <Header>Breakup Space</Header>
             </Project>
             <Project>
                 <NavLink to='/work/thethread'>
                     <Image src={ThreadLogo} alt='The Thread Logo'/>
+                    <Header>The Thread</Header>
                 </NavLink>
-                <Header>The Thread</Header>
             </Project>
             <Project>
                 <NavLink to='/work/viaggamo'>
                     <Image src={ViaggamoLogo} alt='Viaggamo Logo'/>
+                    <Header>Viaggamo</Header>
                 </NavLink>
-                <Header>Viaggamo</Header>
             </Project>
             <Project>
                 <NavLink to='/work/scribble'>
                     <Image src={ScribbleLogo} alt='Scribble Logo'/>
+                    <Header>Scribble</Header>
                 </NavLink>
-                <Header>Scribble</Header>
             </Project>
         </ProjectContainer>
         </>
@@ -49,8 +49,11 @@ const ProjectContainer = styled.div`
 `
 
 const Project = styled.div`
-   margin-bottom: 50px;
-   text-align: center;
+    margin-bottom: 50px;
+    text-align: center;
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 const Image = styled.img`
@@ -58,7 +61,12 @@ const Image = styled.img`
     height: 459px;
 `
 
-const Header = styled.h4`
+const Header = styled.h3`
     text-transform: uppercase;
+    text-decoration: none;
+    color: black;
     margin-top: 10px;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .06em;
 `
