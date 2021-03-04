@@ -12,17 +12,18 @@ function WorkPage(props) {
             <Underline></Underline>
             <p>{props.project.bio}</p>
             <LinkContainer>
-                <Link href={props.project.frontend}>
-                    <img src={githubLogo}/>
+                <Link href={props.project.frontend} target='blank'>
+                    <img src={githubLogo} alt='frontend github link'/>
                     <span>Frontend</span>
                 </Link>
-                <Link href={props.project.backend}>
-                    <img src={githubLogo}/>
+                <Link href={props.project.backend} target='blank'>
+                    <img src={githubLogo} alt='backend github link'/>
                     <span>Backend</span>
                 </Link>
-                {props.project.demo ? <Link href={props.project.demo}>Demo</Link> : null}
+                {props.project.demo ? <Link href={props.project.demo} target='blank'>Demo</Link> : null}
             </LinkContainer>
         </WorkContainer>
+        <span>Back To Work</span> <span>prev /</span> <span>next</span>
         <Work/>
         </>
     )
@@ -35,6 +36,7 @@ const WorkContainer = styled.div`
     flex-direction: column;
     align-items: center;
     border-bottom: solid 1px;
+    margin-bottom: 25px;
 `
 
 const Logo = styled.img`
@@ -49,6 +51,7 @@ const Underline = styled.h3`
 
 const LinkContainer = styled.div`
     display: flex;
+    margin-bottom: 15px;
 `
 
 const Link = styled.a`
