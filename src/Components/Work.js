@@ -17,19 +17,19 @@ function Work() {
                 <Header>Breakup Space</Header>
             </Project>
             <Project>
-                <NavLink to='TheThread'>
+                <NavLink to='/work/thethread'>
                     <Image src={ThreadLogo} alt='The Thread Logo'/>
                 </NavLink>
                 <Header>The Thread</Header>
             </Project>
             <Project>
-                <NavLink to='Viaggamo'>
+                <NavLink to='/work/viaggamo'>
                     <Image src={ViaggamoLogo} alt='Viaggamo Logo'/>
                 </NavLink>
                 <Header>Viaggamo</Header>
             </Project>
             <Project>
-                <NavLink to='Scribble'>
+                <NavLink to='/work/scribble'>
                     <Image src={ScribbleLogo} alt='Scribble Logo'/>
                 </NavLink>
                 <Header>Scribble</Header>
@@ -49,7 +49,6 @@ const ProjectContainer = styled.div`
 `
 
 const Project = styled.div`
-   border: solid;
    margin-bottom: 50px;
    text-align: center;
 `

@@ -27,7 +27,6 @@ const NavBarContainer = styled.div`
     align-items: center;
     margin-bottom: 50px;
     padding: 30px 0px;
-    border: solid red;
 `
 
 const LogoContainer = styled.div``
@@ -35,6 +34,7 @@ const LogoContainer = styled.div``
 const LogoLink = styled(NavLink)`
     margin-bottom: 5px;
     text-transform: uppercase;
+    text-decoration: none;
 `
 
 const Title = styled.h6`
@@ -42,8 +42,12 @@ const Title = styled.h6`
     text-align: center;
 `
 
-const LinkContainer = styled.div``
+const LinkContainer = styled.div`
+    text-transform: uppercase;
+`
 
 const Link = styled(NavLink)`
     margin-left: 20px;
+    text-decoration: none;
+    font-size: 10pt;
 `
