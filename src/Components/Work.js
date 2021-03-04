@@ -35,9 +35,8 @@ export default Work;
 const ProjectContainer = styled.div`
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin 50px 115px;
 `
 
 const Project = styled.div`
