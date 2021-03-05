@@ -10,12 +10,12 @@ import FashionPortfolio from '../assets/hanger.svg';
 function NavBar() {
     return(
         <NavBarContainer>
-            <LogoContainer>
+            <div>
                 <LogoLink to='/'>Samantha Lurio</LogoLink>
                 <SocialLinkContainer>
-                    <a href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='blank'>
+                    <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='blank'>
                         <Icon src={LinkedinIcon} alt='linkedin icon'/>
-                    </a>
+                    </IconLinks>
                     <a href='https://github.com/slurio' target='blank'>
                         <Icon src={GithubIcon} alt='github icon'/>
                     </a>
@@ -26,12 +26,12 @@ function NavBar() {
                         <FashionIcon src={FashionPortfolio} alt='fashion icon'/>
                     </a>
                 </SocialLinkContainer>
-            </LogoContainer>
+            </div>
             <LinkContainer>
                 <Link to='/work'>Work</Link>
                 <Link to='/aboutme'>About Me</Link>
                 <Link to='/contact'>Contact</Link>
-                <ResumeLink href={Resume} target = "blank">Resume</ResumeLink>          
+                <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
             </LinkContainer>
         </NavBarContainer>
     )
@@ -51,20 +51,27 @@ const NavBarContainer = styled.div`
     line-height: 1.8em;
 `
 
-const LogoContainer = styled.div``
+// const LogoContainer = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// `
 
 const LogoLink = styled(NavLink)`
     margin-bottom: 5px;
     text-transform: uppercase;
     text-decoration: none;
     color: black;
+    margin: 0;
 `
 
 const SocialLinkContainer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 5px;
+`
+
+const IconLinks = styled.a`
 `
 
 const Icon = styled.img`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import githubLogo from '../assets/github.svg';
+import githubLogo from '../assets/whiteGithub.svg';
 import DemoIcon from '../assets/demo.svg';
 import Work from './Work';
 
@@ -35,20 +35,20 @@ function WorkPage(props) {
         <>
         <WorkContainer>
             <Logo src={props.project.logo} alt='logo'/>
-            <h3>{props.project.title}</h3>
+            <Header>{props.project.title}</Header>
             <Underline></Underline>
-            <p>{props.project.bio}</p>
+            <ProjectBio>{props.project.bio}</ProjectBio>
             <LinkContainer>
-                <Link href={props.project.frontend} target='blank'>
+                <Link href={props.project.frontend} target='_blank'>
                     <img src={githubLogo} alt='frontend github link'/>
                     <span>Frontend</span>
                 </Link>
-                <Link href={props.project.backend} target='blank'>
+                <Link href={props.project.backend} target='_blank'>
                     <img src={githubLogo} alt='backend github link'/>
                     <span>Backend</span>
                 </Link>
                 {props.project.demo ? 
-                    <Link href={props.project.demo} target='blank'>
+                    <Link href={props.project.demo} target='_blank'>
                         <img src={DemoIcon} alt='demo link'/>
                         <span>Demo</span>
                     </Link>
@@ -56,15 +56,18 @@ function WorkPage(props) {
                 }
             </LinkContainer>
         </WorkContainer>
-        <div>
-            <NavLink to={handlePrev}>
-                <span>prev</span>
-            </NavLink>
-            /
-            <NavLink to={handleNext}>
-                <span>next</span>
-            </NavLink>
-        </div>
+        <NavigationContainer>
+            <NavigationLink to='/work'>Back to WORK</NavigationLink>
+            <div>
+                <NavigationLink to={handlePrev}>
+                    <Span>prev </Span>
+                </NavigationLink>
+                /
+                <NavigationLink to={handleNext}>
+                    <Span> next</Span>
+                </NavigationLink>
+            </div>
+        </NavigationContainer>
         <Work/>
         </>
     )
@@ -80,22 +83,90 @@ const WorkContainer = styled.div`
     margin-bottom: 25px;
 `
 
+const Header = styled.h3`
+    margin-top: 30px;
+    margin-bottom: 18px;
+    font-family: Playfair Display;
+    font-weight: 700;
+    font-style: normal;
+    line-height: .4em;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: .06em;
+`
+
+const ProjectBio = styled.p`
+    font-family: Assistant;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.8em;
+    font-size: 13px;
+    text-transform: none;
+    text-decoration: none;
+    margin: 0 0 1em;
+    color: #575757;
+    margin-top: 10px;
+    margin-bottom: 18px;
+`
+
 const Logo = styled.img`
     width: 50%; 
 `
 
 const Underline = styled.h3`
     border-bottom: solid;
+    border-color: #575757;
     width: 25px;
     margin: 0;
 `
 
 const LinkContainer = styled.div`
     display: flex;
+    justify-content: space-between;
     margin-bottom: 15px;
+    width: 350px;
 `
 
 const Link = styled.a`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     text-decoration: none;
-    padding-left: 10px;
+    margin-left: 5px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-family: proxima-nova;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100px;
+    padding: 10px;
+    border-width: 0;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    font-size: 12px;
+`
+
+const NavigationContainer = styled.div`
+    color: black;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+`
+
+const Span = styled.span`
+`
+
+const NavigationLink = styled(NavLink)`
+    text-decoration: none;
+    color: #575757;
+    ont-family: Assistant;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.8em;
+    font-size: 13px;
+    text-transform: none;
 `

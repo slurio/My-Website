@@ -49,7 +49,7 @@ const ProjectContainer = styled.div`
 `
 
 const Project = styled.div`
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     text-align: center;
     &:hover {
         cursor: pointer;
