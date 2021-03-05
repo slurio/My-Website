@@ -1,5 +1,5 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import React, {UseState} from 'react';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import Work from '../Components/Work';
 import WorkPage from '../Components/WorkPage';
 import BreakupSpaceLogo from '../assets/breakup_space_logo.png';
@@ -48,13 +48,22 @@ const WorkGallery = () => {
         },
     ];
 
+    // const handlePrev = (project) => {
+    //     let currentIndex = projects.indexOf(project);
+    //     if (currentIndex !== 0) {
+    //         console.log(projects[currentIndex - 1]);
+    //     } else {
+    //         console.log(projects[projects.length - 1]);
+    //     }
+    // }
+
     return(
         <>
             <Switch>
                 <Route path={'/work/:id'} render={(routerProps) => {
                     let selectedProject = routerProps.match.params.id
                     let foundProject = projects.find(project => project.id === selectedProject)
-                    return(<WorkPage project={foundProject}/>)
+                    return(<WorkPage project={foundProject} projects={projects}/>)
                 }} />
          
                 <Route path={'/work'} render={() => <Work/>}/>

@@ -51,4 +51,5 @@ const Blurb = styled.p`
     font-style: normal;
     line-height: 1.8em;
     font-size: 13px;
+    color: #575757;
 `

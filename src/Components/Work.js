@@ -65,11 +65,14 @@ const Image = styled.img`
 `
 
 const Header = styled.h3`
+    font-family: Assistant;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.6em;
+    font-size: 11px;
     text-transform: uppercase;
     text-decoration: none;
-    color: black;
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 11px;
+    text-align: center;
     letter-spacing: .06em;
+    color: #1f1f1f;
 `

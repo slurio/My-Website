@@ -1,10 +1,29 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import githubLogo from '../assets/github.svg';
 import DemoIcon from '../assets/demo.svg';
 import Work from './Work';
 
 function WorkPage(props) {
+
+    const handlePrev = () => {
+        
+        let currentIndex = props.projects.indexOf(props.project);
+        if (currentIndex !== 0) {
+            let prevProject = (props.projects[currentIndex - 1]);
+            return `/work/${prevProject.id}`
+        } else {
+            let prevProject = (props.projects[props.projects.length - 1]);
+            return `/work/${prevProject.id}`;
+        }
+
+    }
+
+    const handleNext = () => {
+        console.log('next')
+    }
+
     return(
         <>
         <WorkContainer>
@@ -21,14 +40,21 @@ function WorkPage(props) {
                     <img src={githubLogo} alt='backend github link'/>
                     <span>Backend</span>
                 </Link>
-                <Link href={props.project.backend} target='blank'>
-                    <img src={DemoIcon} alt='demo link'/>
-                    <span>Demo</span>
-                </Link>
-                {props.project.demo ? <Link href={props.project.demo} target='blank'>Demo</Link> : null}
+                {props.project.demo ? 
+                    <Link href={props.project.demo} target='blank'>
+                        <img src={DemoIcon} alt='demo link'/>
+                        <span>Demo</span>
+                    </Link>
+                    : null
+                }
             </LinkContainer>
         </WorkContainer>
-        <span>Back To Work</span> <span>prev /</span> <span>next</span>
+        <div>
+            <NavLink to={handlePrev}>
+                <span>prev</span>
+            </NavLink>
+            {/* <span onClick={handlePrev}>prev</span> / <span onClick={handleNext}>next</span>     */}
+        </div>
         <Work/>
         </>
     )
