@@ -30,7 +30,7 @@ function NavBar() {
             <LinkContainer>
                 <Link to='/work'>Work</Link>
                 <Link to='/aboutme'>About Me</Link>
-                <Link to='/work'>Contact</Link>
+                <Link to='/contact'>Contact</Link>
                 <ResumeLink href={Resume} target = "blank">Resume</ResumeLink>          
             </LinkContainer>
         </NavBarContainer>
@@ -43,8 +43,12 @@ const NavBarContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding: 30px 0px;
+    font-family: Assistant;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.8em;
 `
 
 const LogoContainer = styled.div``
