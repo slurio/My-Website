@@ -5,7 +5,7 @@ import Resume from '../assets/resume.pdf';
 import LinkedinIcon from '../assets/linkedin.svg';
 import GithubIcon from '../assets/github.svg';
 import MediumIcon from '../assets/medium.svg';
-import FashionPortfolio from '../assets/test.svg';
+import FashionPortfolio from '../assets/hanger.svg';
 
 function NavBar() {
     return(
@@ -29,7 +29,7 @@ function NavBar() {
             </LogoContainer>
             <LinkContainer>
                 <Link to='/work'>Work</Link>
-                <Link to='/work'>About Me</Link>
+                <Link to='/aboutme'>About Me</Link>
                 <Link to='/work'>Contact</Link>
                 <ResumeLink href={Resume} target = "blank">Resume</ResumeLink>          
             </LinkContainer>
