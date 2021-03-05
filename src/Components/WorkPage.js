@@ -45,16 +45,16 @@ function WorkPage(props) {
             <ProjectBio>{props.project.bio}</ProjectBio>
             <LinkContainer>
                 <Link href={props.project.frontend} target='_blank'>
-                    <img src={githubLogo} alt='frontend github link'/>
+                    <Icon src={githubLogo} alt='frontend github link'/>
                     <span>Frontend</span>
                 </Link>
                 <Link href={props.project.backend} target='_blank'>
-                    <img src={githubLogo} alt='backend github link'/>
+                    <Icon src={githubLogo} alt='backend github link'/>
                     <span>Backend</span>
                 </Link>
                 {props.project.demo ? 
                     <Link href={props.project.demo} target='_blank'>
-                        <img src={DemoIcon} alt='demo link'/>
+                        <Icon src={DemoIcon} alt='demo link'/>
                         <span>Demo</span>
                     </Link>
                     : null
@@ -182,4 +182,8 @@ const NavigationLink = styled(NavLink)`
 const StackContainer = styled.div`
     display: flex;
     margin: 25px 0;
+`
+
+const Icon = styled.img`
+    
 `

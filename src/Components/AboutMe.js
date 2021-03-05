@@ -13,7 +13,7 @@ function AboutMe() {
                 I have over 7 years of design and production experience in the luxury and bridal industry. 
                 Problem solving and creative thinking is what I enjoy most about my work. 
                 I am always looking to merge my love of design and programming in anything I do! 
-                To learn more about my experience and work history, <a href={Resume} target='blank'>click here.</a>
+                To learn more about my experience and work history, <Link href={Resume} target='_blank'>click here.</Link>
                 <br/><br/>Let's chat and work together!
                 </Blurb>
             </BlurbContainer>
@@ -51,5 +51,10 @@ const Blurb = styled.p`
     font-style: normal;
     line-height: 1.8em;
     font-size: 13px;
+    color: #575757;
+`
+
+const Link = styled.a`
+    text-decoration: underline;
     color: #575757;
 `
