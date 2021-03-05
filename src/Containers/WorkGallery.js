@@ -18,6 +18,7 @@ const WorkGallery = () => {
             frontend: 'https://github.com/kevinpark07/BreakUp-Space-Frontend',
             backend: 'https://github.com/kevinpark07/Breakup-Space-Backend',
             demo: null,
+            stack: ['React', 'Redux', 'Rails', 'Material-Ui', 'styled-components', 'Postgresql'],
         },
         {
             id: 'thethread',
@@ -27,6 +28,7 @@ const WorkGallery = () => {
             frontend: 'https://github.com/slurio/TheThread-Frontend',
             backend: 'https://github.com/slurio/TheThread-Backend',
             demo: 'https://www.loom.com/share/efd8671db5d24d679f7e11427f34313a',
+            stack: ['React Native', 'Redux', 'Rails', 'styled-components', 'Postgresql'],
         },
         {
             id: 'viaggamo',
@@ -36,6 +38,7 @@ const WorkGallery = () => {
             frontend: 'https://github.com/slurio/Viaggiamo-Frontend',
             backend: 'https://github.com/slurio/Viaggiamo-Backend',
             demo: 'https://www.loom.com/share/2ffbf47626e7486992bf48231ef2224b',
+            stack: ['React', 'Rails', 'styled-components', 'Postgresql', 'active storage'],
         },
         {
             id: 'scribble',
@@ -45,6 +48,7 @@ const WorkGallery = () => {
             frontend: 'https://github.com/slurio/Scribbles-Frontend',
             backend: 'https://github.com/slurio/Scribbles-Backend',
             demo: 'https://www.loom.com/share/b476c3a24fc84540a461f1610d0a5fbb',
+            stack: ['Javasript', 'Rails', 'Tailwind'],
         },
     ];
 

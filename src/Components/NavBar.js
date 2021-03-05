@@ -13,16 +13,16 @@ function NavBar() {
             <div>
                 <LogoLink to='/'>Samantha Lurio</LogoLink>
                 <SocialLinkContainer>
-                    <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='blank'>
+                    <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='_blank'>
                         <Icon src={LinkedinIcon} alt='linkedin icon'/>
                     </IconLinks>
-                    <a href='https://github.com/slurio' target='blank'>
+                    <a href='https://github.com/slurio' target='_blank'>
                         <Icon src={GithubIcon} alt='github icon'/>
                     </a>
-                    <a href='https://samantha-lurio.medium.com/' target='blank'>
+                    <a href='https://samantha-lurio.medium.com/' target='_blank'>
                         <Icon src={MediumIcon} alt='medium icon'/>
                     </a>
-                    <a href='https://samanthalurio.carbonmade.com/' target='blank'>
+                    <a href='https://samanthalurio.carbonmade.com/' target='_blank'>
                         <FashionIcon src={FashionPortfolio} alt='fashion icon'/>
                     </a>
                 </SocialLinkContainer>

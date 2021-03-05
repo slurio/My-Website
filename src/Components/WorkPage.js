@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import githubLogo from '../assets/whiteGithub.svg';
 import DemoIcon from '../assets/demo.svg';
 import Work from './Work';
+import Tool from './Tool';
 
 function WorkPage(props) {
 
@@ -31,6 +32,10 @@ function WorkPage(props) {
         }
     }
 
+    const renderStack = () => {
+        return props.project.stack.map(el => <Tool language={el}/>)
+    }
+
     return(
         <>
         <WorkContainer>
@@ -55,6 +60,9 @@ function WorkPage(props) {
                     : null
                 }
             </LinkContainer>
+            <StackContainer>
+                {renderStack()}
+            </StackContainer>
         </WorkContainer>
         <NavigationContainer>
             <NavigationLink to='/work'>Back to WORK</NavigationLink>
@@ -169,4 +177,9 @@ const NavigationLink = styled(NavLink)`
     line-height: 1.8em;
     font-size: 13px;
     text-transform: none;
+`
+
+const StackContainer = styled.div`
+    display: flex;
+    margin: 25px 0;
 `
