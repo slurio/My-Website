@@ -8,8 +8,8 @@ import Work from './Work';
 function WorkPage(props) {
 
     const handlePrev = () => {
-        
         let currentIndex = props.projects.indexOf(props.project);
+
         if (currentIndex !== 0) {
             let prevProject = (props.projects[currentIndex - 1]);
             return `/work/${prevProject.id}`
@@ -17,11 +17,18 @@ function WorkPage(props) {
             let prevProject = (props.projects[props.projects.length - 1]);
             return `/work/${prevProject.id}`;
         }
-
     }
 
     const handleNext = () => {
-        console.log('next')
+        let currentIndex = props.projects.indexOf(props.project);
+
+        if (currentIndex !== props.projects.length - 1) {
+            let prevProject = (props.projects[currentIndex + 1]);
+            return `/work/${prevProject.id}`
+        } else {
+            let prevProject = (props.projects[0]);
+            return `/work/${prevProject.id}`;
+        }
     }
 
     return(
@@ -53,7 +60,10 @@ function WorkPage(props) {
             <NavLink to={handlePrev}>
                 <span>prev</span>
             </NavLink>
-            {/* <span onClick={handlePrev}>prev</span> / <span onClick={handleNext}>next</span>     */}
+            /
+            <NavLink to={handleNext}>
+                <span>next</span>
+            </NavLink>
         </div>
         <Work/>
         </>
