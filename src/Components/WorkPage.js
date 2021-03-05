@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import githubLogo from '../assets/github.svg';
+import DemoIcon from '../assets/demo.svg';
 import Work from './Work';
 
 function WorkPage(props) {
@@ -19,6 +20,10 @@ function WorkPage(props) {
                 <Link href={props.project.backend} target='blank'>
                     <img src={githubLogo} alt='backend github link'/>
                     <span>Backend</span>
+                </Link>
+                <Link href={props.project.backend} target='blank'>
+                    <img src={DemoIcon} alt='demo link'/>
+                    <span>Demo</span>
                 </Link>
                 {props.project.demo ? <Link href={props.project.demo} target='blank'>Demo</Link> : null}
             </LinkContainer>

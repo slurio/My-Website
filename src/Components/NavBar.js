@@ -16,11 +16,11 @@ function NavBar() {
                     <a href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='blank'>
                         <Icon src={LinkedinIcon} alt='linkedin icon'/>
                     </a>
-                    <a href='https://samantha-lurio.medium.com/' target='blank'>
-                        <Icon src={MediumIcon} alt='medium icon'/>
-                    </a>
                     <a href='https://github.com/slurio' target='blank'>
                         <Icon src={GithubIcon} alt='github icon'/>
+                    </a>
+                    <a href='https://samantha-lurio.medium.com/' target='blank'>
+                        <Icon src={MediumIcon} alt='medium icon'/>
                     </a>
                     <a href='https://samanthalurio.carbonmade.com/' target='blank'>
                         <FashionIcon src={FashionPortfolio} alt='fashion icon'/>
