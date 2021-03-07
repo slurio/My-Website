@@ -42,16 +42,16 @@ function WorkPage(props) {
             <Logo src={props.project.logo} alt='logo'/>
             <LinkContainer>
                 <Link href={props.project.frontend} target='_blank'>
-                    <Icon src={githubLogo} alt='frontend github link'/>
+                    {/* <Icon src={githubLogo} alt='frontend github link'/> */}
                     <span>Frontend</span>
                 </Link>
                 <Link href={props.project.backend} target='_blank'>
-                    <Icon src={githubLogo} alt='backend github link'/>
+                    {/* <Icon src={githubLogo} alt='backend github link'/> */}
                     <span>Backend</span>
                 </Link>
                 {props.project.demo ? 
                     <Link href={props.project.demo} target='_blank'>
-                        <Icon src={DemoIcon} alt='demo link'/>
+                        {/* <Icon src={DemoIcon} alt='demo link'/> */}
                         <span>Demo</span>
                     </Link>
                     : null
@@ -142,21 +142,21 @@ const Link = styled.a`
     justify-content: space-around;
     text-decoration: none;
     margin-left: 5px;
-    background-color: black;
     text-align: center;
-    color: white;
     font-family: proxima-nova;
-    font-weight: 300;
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
     width: 100px;
-    padding: 10px;
     border-width: 0;
     text-align: center;
     cursor: pointer;
-    outline: none;
-    font-size: 12px;
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px;
 `
 
 const NavigationContainer = styled.div`

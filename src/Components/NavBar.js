@@ -65,13 +65,13 @@ const LogoLink = styled(NavLink)`
     margin: 0;
 `
 
+const IconLinks = styled.a`
+`
+
 const SocialLinkContainer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-`
-
-const IconLinks = styled.a`
 `
 
 const Icon = styled.img`
