@@ -40,9 +40,6 @@ function WorkPage(props) {
         <>
         <WorkContainer>
             <Logo src={props.project.logo} alt='logo'/>
-            <Header>{props.project.title}</Header>
-            <Underline></Underline>
-            <ProjectBio>{props.project.bio}</ProjectBio>
             <LinkContainer>
                 <Link href={props.project.frontend} target='_blank'>
                     <Icon src={githubLogo} alt='frontend github link'/>
@@ -60,6 +57,9 @@ function WorkPage(props) {
                     : null
                 }
             </LinkContainer>
+            <Header>{props.project.title}</Header>
+            <Underline></Underline>
+            <ProjectBio>{props.project.bio}</ProjectBio>
             <StackContainer>
                 {renderStack()}
             </StackContainer>
@@ -92,7 +92,7 @@ const WorkContainer = styled.div`
 `
 
 const Header = styled.h3`
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 18px;
     font-family: Playfair Display;
     font-weight: 700;
@@ -114,7 +114,7 @@ const ProjectBio = styled.p`
     margin: 0 0 1em;
     color: #575757;
     margin-top: 10px;
-    margin-bottom: 18px;
+    margin-bottom: 0px;
 `
 
 const Logo = styled.img`
@@ -133,6 +133,7 @@ const LinkContainer = styled.div`
     justify-content: space-between;
     margin-bottom: 15px;
     width: 350px;
+    margin-top: 30px;
 `
 
 const Link = styled.a`
@@ -181,7 +182,7 @@ const NavigationLink = styled(NavLink)`
 
 const StackContainer = styled.div`
     display: flex;
-    margin: 25px 0;
+    margin: 20px 0;
 `
 
 const Icon = styled.img`
