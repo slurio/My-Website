@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function Contact() {
     return(
-        <>
+        <div >
             <Title>Contact Me</Title>
             <Form>
                 <Label>Name *</Label>
@@ -26,7 +26,7 @@ function Contact() {
                 <TextArea></TextArea>
                 <Button>Submit</Button>
             </Form>
-        </>
+        </div>
     )
 }
 
