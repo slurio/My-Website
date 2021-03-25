@@ -10,11 +10,11 @@ function WorkPage(props) {
         let currentIndex = props.projects.indexOf(props.project);
 
         if (currentIndex !== 0) {
-            let prevProject = (props.projects[currentIndex - 1]);
-            return `/work/${prevProject.id}`
+            let prevProject = (props.projects[currentIndex - 1]).title.toLowerCase().split(' ').join('');
+            return `/work/${prevProject}`
         } else {
-            let prevProject = (props.projects[props.projects.length - 1]);
-            return `/work/${prevProject.id}`;
+            let prevProject = (props.projects[props.projects.length - 1]).title.toLowerCase().split(' ').join('');
+            return `/work/${prevProject}`;
         }
     }
 
@@ -31,12 +31,13 @@ function WorkPage(props) {
     }
 
     const renderStack = () => {
-        return props.project.stack.map(el => <Tool language={el}/>)
+        return props.project.stack.map(el => <Tool key={el} language={el}/>)
     }
 
     return(
         <>
         <WorkContainer>
+            {console.log(props.project)}
             <Logo src={props.project.logo} alt='logo'/>
             <LinkContainer>
                 <Link href={props.project.frontend} target='_blank'>

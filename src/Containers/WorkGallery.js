@@ -14,7 +14,7 @@ const WorkGallery = () => {
         fetch('http://localhost:3000/projects/')
         .then(resp => resp.json())
         .then(projects => setProjects(projects))
-    })
+    }, []);
 
 
     // const projects = [
