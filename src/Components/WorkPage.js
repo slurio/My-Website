@@ -1,8 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import githubLogo from '../assets/whiteGithub.svg';
-import DemoIcon from '../assets/demo.svg';
 import Work from './Work';
 import Tool from './Tool';
 
