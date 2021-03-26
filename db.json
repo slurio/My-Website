@@ -7,7 +7,7 @@
             "frontend": "https://github.com/kevinpark07/BreakUp-Space-Frontend",
             "backend": "https://github.com/kevinpark07/Breakup-Space-Backend",
             "demo": null,
-            "stack": ["React", "Redux", "Rails", "Material-Ui", "styled-components", "Postgresql", "active storage"]
+            "stack": ["React", "Redux", "Rails", "Material-Ui", "Cloudinary", "styled-components", "Postgresql", "active storage"]
         },
         {
             "id": 2,

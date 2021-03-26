@@ -41,16 +41,13 @@ function WorkPage(props) {
             <Logo src={props.project.logo} alt='logo'/>
             <LinkContainer>
                 <Link href={props.project.frontend} target='_blank'>
-                    {/* <Icon src={githubLogo} alt='frontend github link'/> */}
                     <span>Frontend</span>
                 </Link>
                 <Link href={props.project.backend} target='_blank'>
-                    {/* <Icon src={githubLogo} alt='backend github link'/> */}
                     <span>Backend</span>
                 </Link>
                 {props.project.demo ? 
                     <Link href={props.project.demo} target='_blank'>
-                        {/* <Icon src={DemoIcon} alt='demo link'/> */}
                         <span>Demo</span>
                     </Link>
                     : null
@@ -151,11 +148,16 @@ const Link = styled.a`
     text-align: center;
     cursor: pointer;
     border: 2px solid black;
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: black;
     font-size: 14px;
     font-weight: 600;
     padding: 8px;
+    &:hover {
+        color: white;
+        background: #333;
+        border: 2px solid #333;
+    }
 `
 
 const NavigationContainer = styled.div`
@@ -181,9 +183,10 @@ const NavigationLink = styled(NavLink)`
 
 const StackContainer = styled.div`
     display: flex;
-    margin: 20px 0;
-`
-
-const Icon = styled.img`
-    
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: auto;
+    margin: 20px 0px;
 `
