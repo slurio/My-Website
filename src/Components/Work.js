@@ -69,7 +69,7 @@ const Header = styled.h3`
     font-weight: 600;
     font-style: normal;
     line-height: 1.6em;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;

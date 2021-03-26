@@ -139,10 +139,10 @@ const Link = styled.a`
     text-decoration: none;
     margin-left: 5px;
     text-align: center;
-    font-family: proxima-nova;
+    font-family: Assistant;
     font-style: normal;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     width: 100px;
     border-width: 0;
     text-align: center;
@@ -173,7 +173,7 @@ const Span = styled.span`
 const NavigationLink = styled(NavLink)`
     text-decoration: none;
     color: #575757;
-    ont-family: Assistant;
+    font-family: Assistant;
     font-weight: 400;
     font-style: normal;
     line-height: 1.8em;

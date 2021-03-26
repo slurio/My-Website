@@ -51,18 +51,13 @@ const NavBarContainer = styled.div`
     line-height: 1.8em;
 `
 
-// const LogoContainer = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-// `
-
 const LogoLink = styled(NavLink)`
     margin-bottom: 5px;
     text-transform: uppercase;
     text-decoration: none;
     color: black;
     margin: 0;
+    font-family: Assistant;
 `
 
 const IconLinks = styled.a`
@@ -91,6 +86,7 @@ const Link = styled(NavLink)`
     text-decoration: none;
     font-size: 10pt;
     color: black;
+    font-family: Assistant;
 `
 
 const ResumeLink = styled.a`
@@ -98,4 +94,5 @@ const ResumeLink = styled.a`
     text-decoration: none;
     font-size: 10pt;
     color: black;
+    font-family: Assistant;
 `
