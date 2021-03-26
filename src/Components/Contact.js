@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import * as emailjs from 'emailjs-com';
+import {SERVICE_ID, TEMPLATE_ID, USER_ID} from '../environment';
 
 function Contact() {
     const [firstName, setFirstName] = useState('');
@@ -57,6 +59,21 @@ function Contact() {
         if (e.target.message.value === '') {
             setMessageError(true)
         }
+        console.log(firstName, lastName, email, message)
+        let templateParams = {
+            name: firstName + ' ' + lastName,
+            email: email,
+            to_name: 'service_6da1hhj',
+            subject: subject,
+            message: message,
+           }
+
+        emailjs.send(
+            SERVICE_ID,
+            TEMPLATE_ID,
+            templateParams,
+            USER_ID,
+        )
     }
 
     const handleNameError = () => {
@@ -238,7 +255,7 @@ const Button = styled.button`
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
-    width: 12%;
+    width: 150px;
     padding: 1em 2.5em;
     border-width: 0;
     text-align: center;

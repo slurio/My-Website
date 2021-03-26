@@ -22,11 +22,11 @@ function WorkPage(props) {
         let currentIndex = props.projects.indexOf(props.project);
 
         if (currentIndex !== props.projects.length - 1) {
-            let prevProject = (props.projects[currentIndex + 1]);
-            return `/work/${prevProject.id}`
+            let prevProject = (props.projects[currentIndex + 1]).title.toLowerCase().split(' ').join('');
+            return `/work/${prevProject}`
         } else {
-            let prevProject = (props.projects[0]);
-            return `/work/${prevProject.id}`;
+            let prevProject = (props.projects[0]).title.toLowerCase().split(' ').join('');
+            return `/work/${prevProject}`;
         }
     }
 
