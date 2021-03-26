@@ -9,7 +9,9 @@ function Contact() {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
+    const [emailSent, setEmailSent] = useState(false);
 
+    const [sentError, setSentError] = useState(false);
     const [firstNameError, setFirstNameError] = useState(false);
     const [lastNameError, setLastNameError] = useState(false);
     const [emailError, setEmailError] = useState(false);
@@ -33,66 +35,73 @@ function Contact() {
             case 'message':
                 setMessage(e.target.value)
             break;
+            default:
+            break;
         }
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault();
+
         setFirstNameError(false);
         setLastNameError(false);
         setEmailError(false);
         setSubjectError(false);
         setMessageError(false);
 
-        e.preventDefault();
+ 
         if (e.target.firstName.value === '') {
-            setFirstNameError(true)
+            setFirstNameError(true);
         }
         if (e.target.lastName.value === '') {
-           setLastNameError(true)
+        setLastNameError(true);
         }
         if (e.target.email.value === '') {
-            setEmailError(true)
+            setEmailError(true);
         }
         if (e.target.subject.value === '') {
-            setSubjectError(true)
+            setSubjectError(true);
         }
         if (e.target.message.value === '') {
-            setMessageError(true)
-        }
-        console.log(firstName, lastName, email, message)
-        let templateParams = {
-            name: firstName + ' ' + lastName,
-            email: email,
-            to_name: 'service_6da1hhj',
-            subject: subject,
-            message: message,
-           }
+            setMessageError(true);
+        }        
 
-        emailjs.send(
-            SERVICE_ID,
-            TEMPLATE_ID,
-            templateParams,
-            USER_ID,
-        )
+        if (e.target.firstName.value !== '' && e.target.lastName.value !== '' && e.target.email.value !== '' && e.target.subject.value !== '' && e.target.message.value !== '') {
+            let templateParams = {
+                name: firstName + ' ' + lastName,
+                email: email,
+                subject: subject,
+                message: message,
+            }
+    
+            emailjs.send( SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+            .then((() => setEmailSent(true)),
+             function(error) {
+                setSentError(true)}
+             );
+        }
+
     }
 
     const handleNameError = () => {
         if (firstNameError && lastNameError) {
-            return <h6>Name Required</h6>
+            return <ErrorMessage>Name Required</ErrorMessage>
         } else if (firstNameError) {
-            return <h6>First Name Required</h6>
+            return <ErrorMessage>First Name Required</ErrorMessage>
         } else if (lastNameError) {
-            return <h6>Last Name Required</h6>
+            return <ErrorMessage>Last Name Required</ErrorMessage>
         }
     }
 
     return(
         <div >
             <Title>Contact Me</Title>
+            {emailSent ? <EmailSucess>Email Sent ✔️</EmailSucess> : null}
+            {sentError ? <EmailError>Email not able to send. Please try again.</EmailError> : null}
             <Form onSubmit={handleSubmit}>
+                {handleNameError()}
                 <Label>Name *</Label>
                 <NameContainer>
-                {handleNameError()}
                 <NameInputContainer>
                     <FirstNameInput name='firstName' onChange={handleChange} firstNameError={firstNameError}></FirstNameInput>
                     <Span>First Name</Span>
@@ -103,14 +112,14 @@ function Contact() {
                 </NameInputContainer>
                 </NameContainer>
 
+                {emailError ? <ErrorMessage>Email Required</ErrorMessage> : null}
                 <Label>Email Address *</Label>
-                {emailError ? <h6>Email Required</h6> : null}
                 <EmailInput name='email' onChange={handleChange} emailError={emailError}></EmailInput>
+                {subjectError ? <ErrorMessage>Subject Required</ErrorMessage> : null}
                 <Label>Subject *</Label>
-                {subjectError ? <h6>Subject Required</h6> : null}
                 <SubjectInput name='subject' onChange={handleChange} subjectError={subjectError}></SubjectInput>
+                {messageError ? <ErrorMessage>Message Required</ErrorMessage> : null}
                 <Label>Message *</Label>
-                {messageError ? <h6>Message Required</h6> : null}
                 <TextArea name='message' onChange={handleChange} messageError={messageError}></TextArea>
                 <Button>Submit</Button>
             </Form>
@@ -265,4 +274,27 @@ const Button = styled.button`
     color: #fff;
     background-color: #272727;
     border-color: #272727;
+`
+
+const ErrorMessage = styled.h6`
+    margin: 0px;
+    margin-top: 10px;
+    color: red;
+    font-size: 12px;
+    text-align: center;
+`
+
+const EmailSucess = styled.h3`
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+`
+
+const EmailError = styled.h3`
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: red;
 `
