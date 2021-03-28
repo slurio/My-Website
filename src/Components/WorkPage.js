@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Work from './Work';
 import Tool from './Tool';
+import ImageGallery from '../Containers/ImageGallery';
 
 function WorkPage(props) {
 
@@ -34,6 +35,21 @@ function WorkPage(props) {
         return props.project.stack.map(el => <Tool key={el} language={el}/>)
     }
 
+    const renderImages = () => {
+        let images = props.project.images
+        let index = Math.floor(images.length/2);
+        let columnOne;
+        let ColumnTwo;
+        if (images.length%2 === 0) {
+            columnOne = images.slice(0, index);
+            ColumnTwo = images.slice(index, images.length);
+        } else {
+            columnOne = images.slice(0, index + 1);
+            ColumnTwo = images.slice(index + 1, images.length);
+        }
+        return <ImageGallery key={1} columns={[columnOne,ColumnTwo]}/>;
+    }
+
     return(
         <>
         <WorkContainer>
@@ -59,6 +75,9 @@ function WorkPage(props) {
             <StackContainer>
                 {renderStack()}
             </StackContainer>
+            <ImageContainer>
+                {renderImages()}
+            </ImageContainer>
         </WorkContainer>
         <NavigationContainer>
             <NavigationLink to='/work'>Back to WORK</NavigationLink>
@@ -189,4 +208,14 @@ const StackContainer = styled.div`
     align-content: center;
     width: auto;
     margin: 20px 0px;
+`
+
+const ImageContainer = styled.div`
+    border-radius: 10px;
+    padding: 35px 0px;
+    margin-bottom: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
 `

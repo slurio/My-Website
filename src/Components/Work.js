@@ -62,6 +62,9 @@ const WorkLink = styled(NavLink)`
 const Image = styled.img`
     width: 459px;
     height: 459px;
+    &:hover {
+        filter: brightness(70%)
+    }
 `
 
 const Header = styled.h3`

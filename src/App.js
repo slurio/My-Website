@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Route, Switch} from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Work from './Components/Work';
@@ -7,11 +7,19 @@ import AboutMe from './Components/AboutMe';
 import Contact from './Components/Contact';
 
 function App() {
+  const [projects,setProjects] = useState([]);
+
+  useEffect(() => {
+      fetch('http://localhost:3000/projects/')
+      .then(resp => resp.json())
+      .then(projects => setProjects(projects))
+  }, []);
+
   return (
     <>
       <NavBar/>
       <Switch>
-        <Route path={'/work'} render={() => <WorkGallery/>}/>
+        <Route path={'/work'} render={() => <WorkGallery projects={projects}/>}/>
         <Route path={'/aboutme'} render={() => <AboutMe/>}/>
         <Route path={'/contact'} render={() => <Contact/>}/>
         <Route path={'/'} render={() => <Work/>}/>
