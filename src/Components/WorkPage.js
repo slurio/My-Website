@@ -51,48 +51,49 @@ function WorkPage(props) {
     }
 
     return(
-        <>
-        <WorkContainer>
-            {console.log(props.project)}
-            <Logo src={props.project.logo} alt='logo'/>
-            <LinkContainer>
-                <Link href={props.project.frontend} target='_blank'>
-                    <span>Frontend</span>
-                </Link>
-                <Link href={props.project.backend} target='_blank'>
-                    <span>Backend</span>
-                </Link>
-                {props.project.demo ? 
-                    <Link href={props.project.demo} target='_blank'>
-                        <span>Demo</span>
+        props.project ?
+            <>
+            <WorkContainer>
+                <Logo src={props.project.logo} alt='logo'/>
+                <LinkContainer>
+                    <Link href={props.project.frontend} target='_blank'>
+                        <span>Frontend</span>
                     </Link>
-                    : null
-                }
-            </LinkContainer>
-            <Header>{props.project.title}</Header>
-            <Underline></Underline>
-            <ProjectBio>{props.project.bio}</ProjectBio>
-            <StackContainer>
-                {renderStack()}
-            </StackContainer>
-            <ImageContainer>
-                {renderImages()}
-            </ImageContainer>
-        </WorkContainer>
-        <NavigationContainer>
-            <NavigationLink to='/work'>Back to WORK</NavigationLink>
-            <div>
-                <NavigationLink to={handlePrev}>
-                    <Span>prev </Span>
-                </NavigationLink>
-                /
-                <NavigationLink to={handleNext}>
-                    <Span> next</Span>
-                </NavigationLink>
-            </div>
-        </NavigationContainer>
-        <Work/>
-        </>
+                    <Link href={props.project.backend} target='_blank'>
+                        <span>Backend</span>
+                    </Link>
+                    {props.project.demo ? 
+                        <Link href={props.project.demo} target='_blank'>
+                            <span>Demo</span>
+                        </Link>
+                        : null
+                    }
+                </LinkContainer>
+                <Header>{props.project.title}</Header>
+                <Underline></Underline>
+                <ProjectBio>{props.project.bio}</ProjectBio>
+                <StackContainer>
+                    {renderStack()}
+                </StackContainer>
+                <ImageContainer>
+                    {renderImages()}
+                </ImageContainer>
+            </WorkContainer>
+            <NavigationContainer>
+                <NavigationLink to='/work'>Back to WORK</NavigationLink>
+                <div>
+                    <NavigationLink to={handlePrev}>
+                        <Span>prev </Span>
+                    </NavigationLink>
+                    /
+                    <NavigationLink to={handleNext}>
+                        <Span> next</Span>
+                    </NavigationLink>
+                </div>
+            </NavigationContainer>
+            <Work/>
+            </>
+        : null
     )
 }
 
