@@ -40,14 +40,17 @@ function WorkPage(props) {
         let index = Math.floor(images.length/2);
         let columnOne;
         let ColumnTwo;
-        if (images.length%2 === 0) {
+        if(props.project.title !== 'The Thread') {
+            return <ImageGallery columns={[images]}/>;
+        } else if (images.length%2 === 0) {
             columnOne = images.slice(0, index);
             ColumnTwo = images.slice(index, images.length);
+            return <ImageGallery columns={[columnOne,ColumnTwo]}/>;
         } else {
             columnOne = images.slice(0, index + 1);
             ColumnTwo = images.slice(index + 1, images.length);
+            return <ImageGallery columns={[columnOne,ColumnTwo]}/>;
         }
-        return <ImageGallery key={1} columns={[columnOne,ColumnTwo]}/>;
     }
 
     return(

@@ -4,13 +4,21 @@ import styled from 'styled-components';
 function ImageGallery(props) {
 
     const renderColumns = () => {
-        return props.columns.map(column => {
+        if (props.columns.length === 1) {
             return (
                 <Column>
-                    {column.map(image => <Image src={image} alt='test'/>)}
-                </Column>
-            )
-        })
+                    {props.columns[0].map(image => <Image key={props.columns[0].indexOf(image)} oneColumn={true} src={image} alt='test'/>)}
+                </Column>  
+            );
+        } else {
+            return props.columns.map(column => {
+                return (
+                    <Column>
+                        {column.map(image => <Image key={column.indexOf(image)} src={image} alt='test'/>)}
+                    </Column>
+                )
+            });
+        }
     }
 
     return(
@@ -29,6 +37,8 @@ const Column = styled.div`
 
 const Image = styled.img`
     border: 1px solid black;
-    width:  425px;
+    ${props => props.oneColumn ?
+    `width:  100%;`
+    : `width:  425px;`}
     margin-bottom: 25px;
 `
