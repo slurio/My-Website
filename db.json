@@ -27,7 +27,8 @@
                 "/the_thread/thread_upload.png",
                 "/the_thread/thread_scan_screen.png",
                 "/the_thread/thread_result_two.png",
-                "/the_thread/thread_profile_one.png"            ]
+                "/the_thread/thread_profile_one.png"          
+            ]
         },
         {
             "id": 3,
@@ -37,7 +38,17 @@
             "frontend": "https://github.com/slurio/Viaggiamo-Frontend",
             "backend": "https://github.com/slurio/Viaggiamo-Backend",
             "demo": "https://www.loom.com/share/2ffbf47626e7486992bf48231ef2224b",
-            "stack": ["React", "Rails", "styled-components", "Postgresql", "active storage", "web speech api", "google translate api", "faker gem", "react-bootstrap"]
+            "stack": ["React", "Rails", "styled-components", "Postgresql", "active storage", "web speech api", "google translate api", "faker gem", "react-bootstrap"],
+            "images" : [
+                "/viaggamo/viaggamo_home.png",
+                "/viaggamo/viaggamo_lang_menu.png",
+                "/viaggamo/viaggamo_game.png",
+                "/viaggamo/viaggamo_lesson_one.png",
+                "/viaggamo/viaggamo_lesson_two.png",
+                "/viaggamo/viaggamo_translator.png",
+                "/viaggamo/viaggamo_save_mess.png",
+                "/viaggamo/viaggamo_favs.png"
+            ]
         },
         {
             "id": 4,
