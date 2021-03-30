@@ -7,7 +7,7 @@ function ImageGallery(props) {
         if (props.columns.length === 1) {
             return (
                 <Column>
-                    {props.columns[0].map(image => <Image key={props.columns[0].indexOf(image)} oneColumn={true} src={image} alt='test'/>)}
+                    {props.columns[0].map(image => <Image key={props.columns[0].indexOf(image)} oneColumn={true} src={image} alt='Work Example'/>)}
                 </Column>  
             );
         } else {

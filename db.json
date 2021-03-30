@@ -58,7 +58,14 @@
             "frontend": "https://github.com/slurio/Scribbles-Frontend",
             "backend": "https://github.com/slurio/Scribbles-Backend",
             "demo": "https://www.loom.com/share/b476c3a24fc84540a461f1610d0a5fbb",
-            "stack": ["Javasript", "Rails", "Tailwind", "sqlite3"]
+            "stack": ["Javasript", "Rails", "Tailwind", "sqlite3"],
+            "images": [
+                "/scribble/scribble_login.png",
+                "/scribble/scribble_main.png",
+                "/scribble/scribble_bg.png",
+                "/scribble/scribble_canvas.png",
+                "/scribble/scribble_create.png"
+            ]
         }
     ]
 }
