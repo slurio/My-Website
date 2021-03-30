@@ -60,14 +60,14 @@ function WorkPage(props) {
                 <Logo src={props.project.logo} alt='logo'/>
                 <LinkContainer>
                     <Link href={props.project.frontend} target='_blank'>
-                        <span>Frontend</span>
+                        <LinkSpan>Frontend</LinkSpan>
                     </Link>
                     <Link href={props.project.backend} target='_blank'>
-                        <span>Backend</span>
+                        <LinkSpan>Backend</LinkSpan>
                     </Link>
                     {props.project.demo ? 
                         <Link href={props.project.demo} target='_blank'>
-                            <span>Demo</span>
+                            <LinkSpan>Demo</LinkSpan>
                         </Link>
                         : null
                     }
@@ -75,6 +75,7 @@ function WorkPage(props) {
                 <Header>{props.project.title}</Header>
                 <Underline></Underline>
                 <ProjectBio>{props.project.bio}</ProjectBio>
+                <ToolHeader>Tools</ToolHeader>
                 <StackContainer>
                     {renderStack()}
                 </StackContainer>
@@ -120,6 +121,7 @@ const Header = styled.h3`
     text-transform: none;
     text-decoration: none;
     letter-spacing: .06em;
+    font-size: 16pt;
 `
 
 const ProjectBio = styled.p`
@@ -212,6 +214,9 @@ const StackContainer = styled.div`
     align-content: center;
     width: auto;
     margin: 20px 0px;
+    margin-top: 10px;
+    padding-bottom: 50px;
+    border-bottom: 1pt solid black;
 `
 
 const ImageContainer = styled.div`
@@ -222,4 +227,23 @@ const ImageContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
+`
+
+const LinkSpan = styled.span`
+    font-family: Assistant;
+    font-size: 8pt;
+    padding: 6px 4px;
+    border-radius: 4px;
+`
+
+const ToolHeader = styled.h3`
+    font-family: Playfair Display;
+    font-weight: 700;
+    font-style: normal;
+    line-height: .4em;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: .06em;
+    margin-bottom: 0px;
+    font-size: 14pt;
 `

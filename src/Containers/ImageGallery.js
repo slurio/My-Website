@@ -39,6 +39,7 @@ const Image = styled.img`
     border: 1px solid black;
     ${props => props.oneColumn ?
     `width:  100%;`
-    : `width:  425px;`}
+    : `width:  400px;`}
     margin-bottom: 25px;
 `
+

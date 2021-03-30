@@ -12,7 +12,7 @@ export default Tool;
 const Span = styled.span`
     text-transform: uppercase;
     margin-left: 5px;
-    margin-bottom: 5px;
+    margin-top: 5px;
     font-size: 12px;
     border: 1.5px solid black;
     color: black;
