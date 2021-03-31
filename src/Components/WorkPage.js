@@ -139,7 +139,10 @@ const ProjectBio = styled.p`
 `
 
 const Logo = styled.img`
-    width: 50%; 
+    width: 55%; 
+    @media (max-width: 768px) {
+        width: 70%;  
+    }
 `
 
 const Underline = styled.h3`
@@ -212,16 +215,15 @@ const StackContainer = styled.div`
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: auto;
-    margin: 20px 0px;
+    width: 100%;
+    margin: 35px 0px;
     margin-top: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 35px;
     border-bottom: 1pt solid black;
 `
 
 const ImageContainer = styled.div`
     border-radius: 10px;
-    padding: 35px 0px;
     margin-bottom: 45px;
     display: flex;
     flex-wrap: wrap;
@@ -244,6 +246,7 @@ const ToolHeader = styled.h3`
     text-transform: none;
     text-decoration: none;
     letter-spacing: .06em;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     font-size: 14pt;
+    margin-top: 30px;
 `

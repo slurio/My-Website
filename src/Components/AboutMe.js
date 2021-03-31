@@ -30,6 +30,11 @@ const AboutContainer = styled.div`
 
 const Image = styled.img`
     width: 50%;
+    height: auto;
+    @media (max-width: 768px) {
+        width: 30%
+        height: auto;
+    }
 `
 
   const Title = styled.h3`

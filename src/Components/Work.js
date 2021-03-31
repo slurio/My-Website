@@ -44,8 +44,11 @@ export default Work;
 const ProjectContainer = styled.div`
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    @media (max-width: 768px) {
+        
+    }
 `
 
 const Project = styled.div`
@@ -60,8 +63,8 @@ const WorkLink = styled(NavLink)`
 `
 
 const Image = styled.img`
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     &:hover {
         filter: brightness(70%)
     }
