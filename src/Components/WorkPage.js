@@ -57,7 +57,8 @@ function WorkPage(props) {
         props.project ?
             <>
             <WorkContainer>
-                <Logo src={props.project.logo} alt='logo'/>
+                <Header>{props.project.title}</Header>
+                <Underline></Underline>
                 <LinkContainer>
                     <Link href={props.project.frontend} target='_blank'>
                         <LinkSpan>Frontend</LinkSpan>
@@ -72,8 +73,6 @@ function WorkPage(props) {
                         : null
                     }
                 </LinkContainer>
-                <Header>{props.project.title}</Header>
-                <Underline></Underline>
                 <ProjectBio>{props.project.bio}</ProjectBio>
                 <ToolHeader>Tools</ToolHeader>
                 <StackContainer>
@@ -113,7 +112,7 @@ const WorkContainer = styled.div`
 
 const Header = styled.h3`
     margin-top: 20px;
-    margin-bottom: 18px;
+    margin-bottom: 30px;
     font-family: Playfair Display;
     font-weight: 700;
     font-style: normal;
@@ -121,7 +120,7 @@ const Header = styled.h3`
     text-transform: none;
     text-decoration: none;
     letter-spacing: .06em;
-    font-size: 16pt;
+    font-size: 22pt;
 `
 
 const ProjectBio = styled.p`
@@ -129,7 +128,7 @@ const ProjectBio = styled.p`
     font-weight: 400;
     font-style: normal;
     line-height: 1.8em;
-    font-size: 13px;
+    font-size: 13pt;
     text-transform: none;
     text-decoration: none;
     margin: 0 0 1em;
@@ -138,17 +137,10 @@ const ProjectBio = styled.p`
     margin-bottom: 0px;
 `
 
-const Logo = styled.img`
-    width: 55%; 
-    @media (max-width: 768px) {
-        width: 70%;  
-    }
-`
-
 const Underline = styled.h3`
     border-bottom: solid;
-    border-color: #575757;
-    width: 25px;
+    border-color: #1f1f1f;
+    width: 28px;
     margin: 0;
 `
 
@@ -157,7 +149,7 @@ const LinkContainer = styled.div`
     justify-content: space-between;
     margin-bottom: 15px;
     width: 350px;
-    margin-top: 30px;
+    margin-top: 20px;
 `
 
 const Link = styled.a`
@@ -233,7 +225,7 @@ const ImageContainer = styled.div`
 
 const LinkSpan = styled.span`
     font-family: Assistant;
-    font-size: 8pt;
+    font-size: 10pt;
     padding: 6px 4px;
     border-radius: 4px;
 `

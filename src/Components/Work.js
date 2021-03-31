@@ -46,9 +46,6 @@ const ProjectContainer = styled.div`
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    @media (max-width: 768px) {
-        
-    }
 `
 
 const Project = styled.div`
