@@ -36,11 +36,14 @@ function WorkPage(props) {
     }
 
     const renderImages = () => {
-        let images = props.project.images
+        let images = props.project.images ? props.project.images : false;
         let index = Math.floor(images.length/2);
         let columnOne;
         let ColumnTwo;
-        if(props.project.title !== 'The Thread') {
+        if (!images) {
+            return <h1 style={{textAlign: 'center'}}>No 📷 <br></br> Coming soon!</h1>
+        }
+        else if(props.project.title !== 'The Thread') {
             return <ImageGallery columns={[images]}/>;
         } else if (images.length%2 === 0) {
             columnOne = images.slice(0, index);
@@ -59,7 +62,7 @@ function WorkPage(props) {
             <WorkContainer>
                 <Header>{props.project.title}</Header>
                 <Underline></Underline>
-                <LinkContainer>
+                <LinkContainer demo={props.project.demmo}>
                     <Link href={props.project.frontend} target='_blank'>
                         <LinkSpan>Frontend</LinkSpan>
                     </Link>
@@ -146,10 +149,15 @@ const Underline = styled.h3`
 
 const LinkContainer = styled.div`
     display: flex;
-    justify-content: space-between;
     margin-bottom: 15px;
-    width: 350px;
     margin-top: 20px;
+    ${props => props.demo ?
+        `justify-content: space-between;
+        width: 350px`
+        : 
+        `justify-content: space-around;
+        width: 270px;`
+    }
 `
 
 const Link = styled.a`
