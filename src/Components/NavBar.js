@@ -87,6 +87,12 @@ const Link = styled(NavLink)`
     font-size: 10pt;
     color: black;
     font-family: Assistant;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    &:hover {
+        top: -10px;
+    }
 `
 
 const ResumeLink = styled.a`
@@ -95,4 +101,10 @@ const ResumeLink = styled.a`
     font-size: 10pt;
     color: black;
     font-family: Assistant;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    &:hover {
+        top: -10px;
+    }
 `
