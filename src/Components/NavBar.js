@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Resume from '../assets/resume.pdf';
 import LinkedinIcon from '../assets/linkedin.svg';
 import GithubIcon from '../assets/github.svg';
@@ -8,6 +8,8 @@ import MediumIcon from '../assets/medium.svg';
 import FashionPortfolio from '../assets/hanger.svg';
 
 function NavBar() {
+    let location = useLocation();
+
     return(
         <NavBarContainer>
             <div>
@@ -28,9 +30,9 @@ function NavBar() {
                 </SocialLinkContainer>
             </div>
             <LinkContainer>
-                <Link to='/work'>Work</Link>
-                <Link to='/aboutme'>About Me</Link>
-                <Link to='/contact'>Contact</Link>
+                <Link currentPath={location.pathname} path={'/work'} to='/work'>Work</Link>
+                <Link currentPath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
+                <Link currentPath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
                 <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
             </LinkContainer>
         </NavBarContainer>
@@ -85,7 +87,7 @@ const Link = styled(NavLink)`
     margin-left: 20px;
     text-decoration: none;
     font-size: 10pt;
-    color: black;
+    color: ${props => props.path === props.currentPath ? `grey`: `black`};
     font-family: Assistant;
     position: relative;
     top: 0;
