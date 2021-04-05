@@ -176,6 +176,7 @@ const Link = styled.a`
     text-align: center;
     cursor: pointer;
     border: 2px solid black;
+    border-radius: 4px;
     color: white;
     background-color: black;
     font-size: 14px;
