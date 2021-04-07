@@ -30,9 +30,9 @@ function NavBar() {
                 </SocialLinkContainer>
             </div>
             <LinkContainer>
-                <Link currentPath={location.pathname} path={'/work'} to='/work'>Work</Link>
-                <Link currentPath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
-                <Link currentPath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
+                <Link currentpath={location.pathname} path={'/work'} to='/work'>Work</Link>
+                <Link currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
+                <Link currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
                 <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
             </LinkContainer>
         </NavBarContainer>
@@ -87,7 +87,7 @@ const Link = styled(NavLink)`
     margin-left: 20px;
     text-decoration: none;
     font-size: 10pt;
-    color: ${props => props.path === props.currentPath ? `grey`: `black`};
+    color: ${props => props.path === props.currentpath ? `grey`: `black`};
     font-family: Assistant;
     position: relative;
     top: 0;
