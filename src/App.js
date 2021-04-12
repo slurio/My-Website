@@ -10,7 +10,7 @@ function App() {
   const [projects,setProjects] = useState([]);
 
   useEffect(() => {
-      fetch('http://localhost:3000/projects/')
+      fetch('https://my-json-server.typicode.com/slurio/demo/projects')
       .then(resp => resp.json())
       .then(projects => setProjects(projects))
   }, []);
