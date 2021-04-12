@@ -19,7 +19,6 @@ function App() {
     <>
       <NavBar/>
       <Switch>
-        {/* <Route path={'/work'} render={() => <WorkGallery projects={projects}/>}/> */}
         <Route path={'/aboutme'} render={() => <AboutMe/>}/>
         <Route path={'/contact'} render={() => <Contact/>}/>
         <Route path={'/'} render={() => <WorkGallery projects={projects}/>}/>
