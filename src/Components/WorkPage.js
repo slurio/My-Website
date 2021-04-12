@@ -62,7 +62,7 @@ function WorkPage(props) {
             <WorkContainer>
                 <Header>{props.project.title}</Header>
                 <Underline></Underline>
-                <LinkContainer demo={props.project.demmo}>
+                <LinkContainer demo={props.project.demo}>
                     <Link href={props.project.frontend} target='_blank'>
                         <LinkSpan>Frontend</LinkSpan>
                     </Link>

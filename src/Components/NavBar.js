@@ -30,7 +30,7 @@ function NavBar() {
                 </SocialLinkContainer>
             </div>
             <LinkContainer>
-                <WorkLink currentpath={location.pathname} to='/work'>Work</WorkLink>
+                <WorkLink currentpath={location.pathname} to='/'>Work</WorkLink>
                 <Link currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
                 <Link currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
                 <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
@@ -98,7 +98,7 @@ const Link = styled(NavLink)`
 `
 
 const WorkLink = styled(Link)`
-    color: ${props => props.currentpath.includes('work') ? `grey`: `black`};
+    color: ${props => props.currentpath.includes('work') || props.currentpath === '/' ? `grey`: `black`};
 `
 
 const ResumeLink = styled.a`

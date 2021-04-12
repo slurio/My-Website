@@ -14,7 +14,7 @@ const WorkGallery = (props) => {
                     return(<WorkPage project={foundProject} projects={props.projects}/>)
                 }} />
          
-                <Route path={'/work'} render={() => <Work/>}/>
+                <Route path={'/'} render={() => <Work/>}/>
             </Switch>
         </>
     )

@@ -13,8 +13,8 @@ function ImageGallery(props) {
         } else {
             return props.columns.map(column => {
                 return (
-                    <Column>
-                        {column.map(image => <Image key={image} src={image} alt='test'/>)}
+                    <Column key={props.columns.indexOf(column)}>
+                        {column.map(image => <Image key={image} src={image} alt='Work Example'/>)}
                     </Column>
                 )
             });
