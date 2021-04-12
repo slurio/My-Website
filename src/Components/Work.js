@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import ThreadLogo from '../../assets/thread_logo.png';
-import BreakupSpaceLogo from '../../assets/breakup_space_logo.png';
-import ViaggamoLogo from '../../assets/viaggamo_logo.png';
-import ScribbleLogo from '../../assets/scribble_logo.png';
+import ThreadLogo from '../assets/thread_logo.png';
+import BreakupSpaceLogo from '../assets/breakup_space_logo.png';
+import ViaggamoLogo from '../assets/viaggamo_logo.png';
+import ScribbleLogo from '../assets/scribble_logo.png';
 
 function Work() {
     return(

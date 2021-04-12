@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink, useLocation } from 'react-router-dom';
-import Resume from '../../assets/resume.pdf';
-import LinkedinIcon from '../../assets/linkedin.svg';
-import GithubIcon from '../../assets/github.svg';
-import MediumIcon from '../../assets/medium.svg';
-import FashionPortfolio from '../../assets/hanger.svg';
+import Resume from '../assets/resume.pdf';
+import LinkedinIcon from '../assets/linkedin.svg';
+import GithubIcon from '../assets/github.svg';
+import MediumIcon from '../assets/medium.svg';
+import FashionPortfolio from '../assets/hanger.svg';
 
 function NavBar() {
     let location = useLocation();
