@@ -76,9 +76,15 @@ function Contact() {
     
             emailjs.send( SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
             .then((() => setEmailSent(true)),
-             function(error) {
-                setSentError(true)}
-             );
+            function(error) {
+            setSentError(true)}
+            );
+            
+            setFirstName('');
+            setLastName('');
+            setEmail('');
+            setSubject('');
+            setMessage('');
         }
 
     }
@@ -103,24 +109,24 @@ function Contact() {
                 <Label>Name *</Label>
                 <NameContainer>
                 <NameInputContainer>
-                    <FirstNameInput name='firstName' onChange={handleChange} firstNameError={firstNameError}></FirstNameInput>
+                    <FirstNameInput name='firstName' value={firstName} onChange={handleChange} firstNameError={firstNameError}></FirstNameInput>
                     <Span>First Name</Span>
                 </NameInputContainer>
                 <NameInputContainer>
-                    <LastNameInput name='lastName' onChange={handleChange} lastNameError={lastNameError}></LastNameInput>
+                    <LastNameInput name='lastName' value={lastName} onChange={handleChange} lastNameError={lastNameError}></LastNameInput>
                     <Span>Last Name</Span>
                 </NameInputContainer>
                 </NameContainer>
 
                 {emailError ? <ErrorMessage>Email Required</ErrorMessage> : null}
                 <Label>Email Address *</Label>
-                <EmailInput name='email' onChange={handleChange} emailError={emailError}></EmailInput>
+                <EmailInput name='email' value={email} onChange={handleChange} emailError={emailError}></EmailInput>
                 {subjectError ? <ErrorMessage>Subject Required</ErrorMessage> : null}
                 <Label>Subject *</Label>
-                <SubjectInput name='subject' onChange={handleChange} subjectError={subjectError}></SubjectInput>
+                <SubjectInput name='subject' value={subject} onChange={handleChange} subjectError={subjectError}></SubjectInput>
                 {messageError ? <ErrorMessage>Message Required</ErrorMessage> : null}
                 <Label>Message *</Label>
-                <TextArea name='message' onChange={handleChange} messageError={messageError}></TextArea>
+                <TextArea name='message' value={message} onChange={handleChange} messageError={messageError}></TextArea>
                 <Button>Submit</Button>
             </Form>
         </div>
