@@ -179,9 +179,9 @@ const Link = styled.a`
     border-radius: 4px;
     color: white;
     background-color: black;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 8px 10px;
     &:hover {
         color: white;
         background: #333;
