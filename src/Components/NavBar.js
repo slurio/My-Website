@@ -86,7 +86,7 @@ const NavBarContainer = styled.div`
     font-style: normal;
     line-height: 1.8em;
     @media (max-width: 590px) {
-        margin-bottom: 25px;
+        margin-bottom: 0;
         & > .links{
             transition: .5s;
             height: 0px;

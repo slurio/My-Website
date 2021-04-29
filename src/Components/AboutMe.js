@@ -6,7 +6,7 @@ import Resume from '../assets/resume.pdf';
 function AboutMe() {
     return(
         <AboutContainer>
-            <Image src={bioImage}/>
+            <Image src={bioImage} alt='image of Samantha Lurio'/>
             <BlurbContainer>
                 <Title>About</Title>
                 <Blurb>Hi, I'm Samantha, a software engineer and fashion designer based in Brooklyn.
@@ -26,13 +26,17 @@ export default AboutMe;
 const AboutContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const Image = styled.img`
     width: 50%;
     height: auto;
     @media (max-width: 768px) {
-        width: 30%
+        width: 100%;
         height: auto;
     }
 `
@@ -48,6 +52,10 @@ const Image = styled.img`
   `
 const BlurbContainer = styled.div`
     margin-left: 35px;
+    @media (max-width: 768px) {
+        margin-left: 0;
+        margin-top: 25px;
+    }
 `
 
 const Blurb = styled.p`
