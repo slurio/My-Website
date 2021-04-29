@@ -18,12 +18,14 @@ function NavBar() {
     const openNavBar = () => {
         setMobileClick(true);
         const links = document.querySelector('.links')
-        links.style.height ='200px';
-        links.style.display = 'flex';
-        links.style.flexDirection = 'column';
-
         const icon = document.querySelector('.navIcon')
-        icon.style.height = '0px';
+
+        if (screenWidth <= 590) {
+            links.style.height ='200px';
+            links.style.display = 'flex';
+            links.style.flexDirection = 'column';
+            icon.style.height = '0px';
+        }
 
     }
     
