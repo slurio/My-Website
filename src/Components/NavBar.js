@@ -12,45 +12,79 @@ import { useState } from 'react';
 function NavBar() {
     let location = useLocation();
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    let [mobileClick, setMobileClick] = useState(false);
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth));
 
+    const openNavBar = () => {
+        setMobileClick(true);
+        const links = document.querySelector('.links')
+        links.style.height ='200px';
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        
+        const icon = document.querySelector('.navIcon')
+        icon.style.height = '0px';
+
+    }
+    console.log(mobileClick)
     return(
-        screenWidth <= 590 ?
-            <NavigationIcon src={NavIcon} alt='navgation icon to open nav bar'/>
-            :
-            <NavBarContainer>       
-                <div>
-                    <LogoLink to='/'>Samantha Lurio</LogoLink>
-                    <SocialLinkContainer>
-                        <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='_blank'>
-                            <Icon src={LinkedinIcon} alt='linkedin icon'/>
-                        </IconLinks>
-                        <a href='https://github.com/slurio' target='_blank' rel="noreferrer">
-                            <Icon src={GithubIcon} alt='github icon'/>
-                        </a>
-                        <a href='https://samantha-lurio.medium.com/' target='_blank' rel="noreferrer">
-                            <Icon src={MediumIcon} alt='medium icon'/>
-                        </a>
-                        <a href='https://samanthalurio.carbonmade.com/' target='_blank' rel="noreferrer">
-                            <FashionIcon src={FashionPortfolio} alt='fashion icon'/>
-                        </a>
-                    </SocialLinkContainer>
-                </div>
-                <LinkContainer>
-                    <WorkLink currentpath={location.pathname} to='/'>Work</WorkLink>
-                    <Link currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
-                    <Link currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
-                    <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
-                </LinkContainer>
-            </NavBarContainer>    
+        <NavBarContainer screenWidth={screenWidth}>
+            <NavigationIcon className={'navIcon'} screenWidth={screenWidth} onClick={openNavBar} src={NavIcon} alt='navgation icon to open nav bar'/>
+            <SocialContainer screenWidth={screenWidth}>
+                <LogoLink to='/'>Samantha Lurio</LogoLink>
+                <SocialLinkContainer>
+                    <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='_blank'>
+                        <Icon src={LinkedinIcon} alt='linkedin icon'/>
+                    </IconLinks>
+                    <a href='https://github.com/slurio' target='_blank' rel="noreferrer">
+                        <Icon src={GithubIcon} alt='github icon'/>
+                    </a>
+                    <a href='https://samantha-lurio.medium.com/' target='_blank' rel="noreferrer">
+                        <Icon src={MediumIcon} alt='medium icon'/>
+                    </a>
+                    <a href='https://samanthalurio.carbonmade.com/' target='_blank' rel="noreferrer">
+                        <FashionIcon src={FashionPortfolio} alt='fashion icon'/>
+                    </a>
+                </SocialLinkContainer>
+            </SocialContainer>
+            <LinkContainer screenWidth={screenWidth} className={'links'}>
+                <WorkLink currentpath={location.pathname} to='/'>Work</WorkLink>
+                <Link currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
+                <Link currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
+                <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
+            </LinkContainer>
+        </NavBarContainer>    
     )
 }
 
 export default NavBar;
 
 const NavigationIcon = styled.img`
-    margin-bottom: 30px;
+    display: ${props => props.screenWidth <= 590 ? null: `none`};
 `
+
+// const NavBarContainer = styled.div`
+// ${props => props.screenWidth <= 590 ?
+//     `border: red solid;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-bottom: 40px;
+//     font-family: Assistant;
+//     font-weight: 400;
+//     font-style: normal;
+//     line-height: 1.8em;`
+//     :
+//     `display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-bottom: 40px;
+//     padding: 30px 0px;
+//     font-family: Assistant;
+//     font-weight: 400;
+//     font-style: normal;
+//     line-height: 1.8em;`}
+// `    
 
 const NavBarContainer = styled.div`
     display: flex;
@@ -62,6 +96,21 @@ const NavBarContainer = styled.div`
     font-weight: 400;
     font-style: normal;
     line-height: 1.8em;
+    @media (max-width: 590px) {
+        border: red solid 1px;
+        & > .links{
+            transition: .5s;
+            height: 0px;
+            overflow: hidden;
+            text-align: center;
+            width: 100vw;
+          }
+    }
+`
+
+
+const SocialContainer = styled.div`
+    display: ${props => props.screenWidth <= 590 ? `none`: null};
 `
 
 const LogoLink = styled(NavLink)`
