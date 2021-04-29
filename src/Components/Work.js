@@ -63,13 +63,13 @@ const WorkLink = styled(NavLink)`
 
 // old width and height was 500px
 const Image = styled.img`
-    width: 80%;
-    height: 80%;
+    width: 500px;
+    height: 500px;
     &:hover {
         filter: brightness(70%)
     }
     @media (max-width: 768px) {
-        width: 100%;
+        width: 85%;
       }
 `
 
