@@ -21,12 +21,22 @@ function NavBar() {
         links.style.height ='200px';
         links.style.display = 'flex';
         links.style.flexDirection = 'column';
-        
+
         const icon = document.querySelector('.navIcon')
         icon.style.height = '0px';
 
     }
-    console.log(mobileClick)
+    
+    const closeNavBar = () => {
+        const links = document.querySelector('.links');
+        const icon = document.querySelector('.navIcon')
+
+        if (screenWidth <= 590) {
+            links.style.height ='0px';
+            icon.style.height = '30px';
+        }
+    }
+
     return(
         <NavBarContainer screenWidth={screenWidth}>
             <NavigationIcon className={'navIcon'} screenWidth={screenWidth} onClick={openNavBar} src={NavIcon} alt='navgation icon to open nav bar'/>
@@ -48,9 +58,9 @@ function NavBar() {
                 </SocialLinkContainer>
             </SocialContainer>
             <LinkContainer screenWidth={screenWidth} className={'links'}>
-                <WorkLink currentpath={location.pathname} to='/'>Work</WorkLink>
-                <Link currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
-                <Link currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
+                <WorkLink onClick={closeNavBar} currentpath={location.pathname} to='/'>Work</WorkLink>
+                <Link onClick={closeNavBar} currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
+                <Link onClick={closeNavBar} currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
                 <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
             </LinkContainer>
         </NavBarContainer>    
