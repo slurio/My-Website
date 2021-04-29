@@ -61,7 +61,6 @@ const WorkLink = styled(NavLink)`
     text-decoration: none;
 `
 
-// old width and height was 500px
 const Image = styled.img`
     width: 500px;
     height: 500px;
@@ -70,6 +69,7 @@ const Image = styled.img`
     }
     @media (max-width: 768px) {
         width: 85%;
+        height: auto;
       }
 `
 

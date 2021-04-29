@@ -12,21 +12,20 @@ import { useState } from 'react';
 function NavBar() {
     let location = useLocation();
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    let [mobileClick, setMobileClick] = useState(false);
+    // let [mobileClick, setMobileClick] = useState(false);
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth));
 
     const openNavBar = () => {
-        setMobileClick(true);
+        // setMobileClick(true);
         const links = document.querySelector('.links')
         const icon = document.querySelector('.navIcon')
 
         if (screenWidth <= 590) {
             links.style.height ='200px';
-            links.style.display = 'flex';
-            links.style.flexDirection = 'column';
+            // links.style.display = 'flex';
+            // links.style.flexDirection = 'column';
             icon.style.height = '0px';
         }
-
     }
     
     const closeNavBar = () => {
@@ -132,6 +131,7 @@ const LinkContainer = styled.div`
     text-transform: uppercase;
     @media (max-width: 590px) {
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
         & > .link{
