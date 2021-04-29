@@ -60,10 +60,10 @@ function NavBar() {
                 </SocialLinkContainer>
             </SocialContainer>
             <LinkContainer screenWidth={screenWidth} className={'links'}>
-                <WorkLink onClick={closeNavBar} currentpath={location.pathname} to='/'>Work</WorkLink>
-                <Link onClick={closeNavBar} currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
-                <Link onClick={closeNavBar} currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
-                <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
+                <WorkLink className={'link'} onClick={closeNavBar} currentpath={location.pathname} to='/'>Work</WorkLink>
+                <Link className={'link'} onClick={closeNavBar} currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
+                <Link className={'link'} onClick={closeNavBar} currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
+                <ResumeLink className={'link'} href={Resume} target = "_blank">Resume</ResumeLink>          
             </LinkContainer>
         </NavBarContainer>    
     )
@@ -73,30 +73,7 @@ export default NavBar;
 
 const NavigationIcon = styled.img`
     display: ${props => props.screenWidth <= 590 ? null: `none`};
-`
-
-// const NavBarContainer = styled.div`
-// ${props => props.screenWidth <= 590 ?
-//     `border: red solid;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     margin-bottom: 40px;
-//     font-family: Assistant;
-//     font-weight: 400;
-//     font-style: normal;
-//     line-height: 1.8em;`
-//     :
-//     `display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     margin-bottom: 40px;
-//     padding: 30px 0px;
-//     font-family: Assistant;
-//     font-weight: 400;
-//     font-style: normal;
-//     line-height: 1.8em;`}
-// `    
+`   
 
 const NavBarContainer = styled.div`
     display: flex;
@@ -109,6 +86,7 @@ const NavBarContainer = styled.div`
     font-style: normal;
     line-height: 1.8em;
     @media (max-width: 590px) {
+        margin-bottom: 25px;
         & > .links{
             transition: .5s;
             height: 0px;
@@ -152,6 +130,15 @@ const FashionIcon = styled.img`
 
 const LinkContainer = styled.div`
     text-transform: uppercase;
+    @media (max-width: 590px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        & > .link{
+            margin-left: 0;
+            font-size: 16px;
+        }
+    }
 `
 
 const Link = styled(NavLink)`
