@@ -6,40 +6,51 @@ import LinkedinIcon from '../assets/linkedin.svg';
 import GithubIcon from '../assets/github.svg';
 import MediumIcon from '../assets/medium.svg';
 import FashionPortfolio from '../assets/hanger.svg';
+import NavIcon from '../assets/icon.svg';
+import { useState } from 'react';
 
 function NavBar() {
     let location = useLocation();
+    let [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    window.addEventListener('resize', () => setScreenWidth(window.innerWidth));
 
     return(
-        <NavBarContainer>
-            <div>
-                <LogoLink to='/'>Samantha Lurio</LogoLink>
-                <SocialLinkContainer>
-                    <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='_blank'>
-                        <Icon src={LinkedinIcon} alt='linkedin icon'/>
-                    </IconLinks>
-                    <a href='https://github.com/slurio' target='_blank' rel="noreferrer">
-                        <Icon src={GithubIcon} alt='github icon'/>
-                    </a>
-                    <a href='https://samantha-lurio.medium.com/' target='_blank' rel="noreferrer">
-                        <Icon src={MediumIcon} alt='medium icon'/>
-                    </a>
-                    <a href='https://samanthalurio.carbonmade.com/' target='_blank' rel="noreferrer">
-                        <FashionIcon src={FashionPortfolio} alt='fashion icon'/>
-                    </a>
-                </SocialLinkContainer>
-            </div>
-            <LinkContainer>
-                <WorkLink currentpath={location.pathname} to='/'>Work</WorkLink>
-                <Link currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
-                <Link currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
-                <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
-            </LinkContainer>
-        </NavBarContainer>
+        screenWidth <= 590 ?
+            <NavigationIcon src={NavIcon} alt='navgation icon to open nav bar'/>
+            :
+            <NavBarContainer>       
+                <div>
+                    <LogoLink to='/'>Samantha Lurio</LogoLink>
+                    <SocialLinkContainer>
+                        <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='_blank'>
+                            <Icon src={LinkedinIcon} alt='linkedin icon'/>
+                        </IconLinks>
+                        <a href='https://github.com/slurio' target='_blank' rel="noreferrer">
+                            <Icon src={GithubIcon} alt='github icon'/>
+                        </a>
+                        <a href='https://samantha-lurio.medium.com/' target='_blank' rel="noreferrer">
+                            <Icon src={MediumIcon} alt='medium icon'/>
+                        </a>
+                        <a href='https://samanthalurio.carbonmade.com/' target='_blank' rel="noreferrer">
+                            <FashionIcon src={FashionPortfolio} alt='fashion icon'/>
+                        </a>
+                    </SocialLinkContainer>
+                </div>
+                <LinkContainer>
+                    <WorkLink currentpath={location.pathname} to='/'>Work</WorkLink>
+                    <Link currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
+                    <Link currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
+                    <ResumeLink href={Resume} target = "_blank">Resume</ResumeLink>          
+                </LinkContainer>
+            </NavBarContainer>    
     )
 }
 
 export default NavBar;
+
+const NavigationIcon = styled.img`
+    margin-bottom: 30px;
+`
 
 const NavBarContainer = styled.div`
     display: flex;
