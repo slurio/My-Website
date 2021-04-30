@@ -156,7 +156,7 @@ const LinkContainer = styled.div`
     margin-top: 20px;
     ${props => props.demo ?
         `justify-content: space-between;
-        width: 350px`
+        width: 400px`
         : 
         `justify-content: space-around;
         width: 270px;`
@@ -166,25 +166,18 @@ const LinkContainer = styled.div`
 const Link = styled.a`
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     text-decoration: none;
-    margin-left: 5px;
-    text-align: center;
     font-family: Assistant;
     font-style: normal;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    width: 100px;
+    width: 120px;
     border-width: 0;
-    text-align: center;
     cursor: pointer;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 4px;
     color: white;
     background-color: black;
-    font-size: 12px;
-    font-weight: 400;
-    padding: 8px 10px;
     &:hover {
         color: white;
         background: #333;
@@ -237,9 +230,13 @@ const ImageContainer = styled.div`
 
 const LinkSpan = styled.span`
     font-family: Assistant;
-    font-size: 10pt;
+    font-size: 12px;
     padding: 6px 4px;
     border-radius: 4px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 1em 2.5em;
+    text-align: center;
 `
 
 const ToolHeader = styled.h3`
