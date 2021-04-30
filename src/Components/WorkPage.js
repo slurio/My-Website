@@ -138,6 +138,9 @@ const ProjectBio = styled.p`
     color: #575757;
     margin-top: 10px;
     margin-bottom: 0px;
+    @media (max-width: 590px) {
+        text-align: center;
+    }
 `
 
 const Underline = styled.h3`
