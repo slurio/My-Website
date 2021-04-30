@@ -70,7 +70,7 @@ const Image = styled.img`
     @media (max-width: 768px) {
         width: 85%;
         height: auto;
-      }
+    }
 `
 
 const Header = styled.h3`

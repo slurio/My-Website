@@ -33,6 +33,9 @@ export default ImageGallery;
 const Column = styled.div`
     display: flex;
     flex-direction: column;
+    @media (max-width: 425px) {
+        align-items: center;
+    }
 `
 
 const Image = styled.img`
@@ -41,5 +44,9 @@ const Image = styled.img`
     `width:  100%;`
     : `width:  400px;`}
     margin-bottom: 25px;
+    @media (max-width: 425px) {
+        width: 100%;
+        height: auto;
+    }
 `
 
