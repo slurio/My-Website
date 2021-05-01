@@ -12,18 +12,14 @@ import { useState } from 'react';
 function NavBar() {
     let location = useLocation();
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    // let [mobileClick, setMobileClick] = useState(false);
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth));
 
     const openNavBar = () => {
-        // setMobileClick(true);
         const links = document.querySelector('.links')
         const icon = document.querySelector('.navIcon')
 
         if (screenWidth <= 590) {
             links.style.height ='200px';
-            // links.style.display = 'flex';
-            // links.style.flexDirection = 'column';
             icon.style.height = '0px';
         }
     }
@@ -95,7 +91,6 @@ const NavBarContainer = styled.div`
           }
     }
 `
-
 
 const SocialContainer = styled.div`
     display: ${props => props.screenWidth <= 590 ? `none`: null};
