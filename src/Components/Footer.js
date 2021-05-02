@@ -46,9 +46,7 @@ const Container = styled.div`
     display: none;
 `
 
-const SocialContainer = styled.div`
-    display: ${props => props.screenWidth <= 590 ? `none`: null};
-`
+const SocialContainer = styled.div``
 
 const LogoLink = styled(NavLink)`
     margin-bottom: 5px;
