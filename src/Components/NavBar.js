@@ -2,12 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink, useLocation } from 'react-router-dom';
 import Resume from '../assets/resume.pdf';
-import LinkedinIcon from '../assets/linkedin.svg';
-import GithubIcon from '../assets/github.svg';
-import MediumIcon from '../assets/medium.svg';
-import FashionPortfolio from '../assets/hanger.svg';
 import NavIcon from '../assets/icon.svg';
 import { useState } from 'react';
+import SocialLinks from './SocialLinks';
 
 function NavBar() {
     let location = useLocation();
@@ -37,23 +34,7 @@ function NavBar() {
     return(
         <NavBarContainer>
             <NavigationIcon className={'navIcon'} onClick={openNavBar} src={NavIcon} alt='navgation icon to open nav bar'/>
-            <SocialContainer>
-                <LogoLink to='/'>Samantha Lurio</LogoLink>
-                <SocialLinkContainer>
-                    <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='_blank'>
-                        <Icon src={LinkedinIcon} alt='linkedin icon'/>
-                    </IconLinks>
-                    <a href='https://github.com/slurio' target='_blank' rel="noreferrer">
-                        <Icon src={GithubIcon} alt='github icon'/>
-                    </a>
-                    <a href='https://samantha-lurio.medium.com/' target='_blank' rel="noreferrer">
-                        <Icon src={MediumIcon} alt='medium icon'/>
-                    </a>
-                    <a href='https://samanthalurio.carbonmade.com/' target='_blank' rel="noreferrer">
-                        <FashionIcon src={FashionPortfolio} alt='fashion icon'/>
-                    </a>
-                </SocialLinkContainer>
-            </SocialContainer>
+            {screenWidth <= 590 ? <div style={{display: 'none'}}><SocialLinks/></div> : <SocialLinks/>}
             <LinkContainer className={'links'}>
                 <WorkLink className={'link'} onClick={closeNavBar} currentpath={location.pathname} to='/'>Work</WorkLink>
                 <Link className={'link'} onClick={closeNavBar} currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
@@ -93,39 +74,6 @@ const NavBarContainer = styled.div`
             width: 100vw;
           }
     }
-`
-
-const SocialContainer = styled.div`
-    display: blobk;
-    @media (max-width: 590px) {
-        display: none;
-    }
-`
-
-const LogoLink = styled(NavLink)`
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: black;
-    margin: 0;
-    font-family: Assistant;
-`
-
-const IconLinks = styled.a`
-`
-
-const SocialLinkContainer = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-`
-
-const Icon = styled.img`
-    width: 18px;
-`
-
-const FashionIcon = styled.img`
-    width: 25px;
 `
 
 const LinkContainer = styled.div`

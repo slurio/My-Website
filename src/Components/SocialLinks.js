@@ -6,7 +6,8 @@ import MediumIcon from '../assets/medium.svg';
 import FashionPortfolio from '../assets/hanger.svg';
 import { NavLink } from 'react-router-dom';
 
-function Footer() {
+function SocialLinks() {
+
     return(
         <Container>
             <SocialContainer>
@@ -30,7 +31,7 @@ function Footer() {
     )
 }
 
-export default Footer;
+export default SocialLinks;
 
 const Container = styled.div`
 @media (max-width: 590px) {
@@ -43,10 +44,11 @@ const Container = styled.div`
     font-style: normal;
     line-height: 1.8em;
 }
-    display: none;
+    
 `
 
-const SocialContainer = styled.div``
+const SocialContainer = styled.div`
+`
 
 const LogoLink = styled(NavLink)`
     margin-bottom: 5px;
