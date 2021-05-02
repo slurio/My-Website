@@ -35,9 +35,9 @@ function NavBar() {
     }
 
     return(
-        <NavBarContainer screenWidth={screenWidth}>
-            <NavigationIcon className={'navIcon'} screenWidth={screenWidth} onClick={openNavBar} src={NavIcon} alt='navgation icon to open nav bar'/>
-            <SocialContainer screenWidth={screenWidth}>
+        <NavBarContainer>
+            <NavigationIcon className={'navIcon'} onClick={openNavBar} src={NavIcon} alt='navgation icon to open nav bar'/>
+            <SocialContainer>
                 <LogoLink to='/'>Samantha Lurio</LogoLink>
                 <SocialLinkContainer>
                     <IconLinks href='https://www.linkedin.com/in/samantha-lurio-27b0832a/' target='_blank'>
@@ -54,7 +54,7 @@ function NavBar() {
                     </a>
                 </SocialLinkContainer>
             </SocialContainer>
-            <LinkContainer screenWidth={screenWidth} className={'links'}>
+            <LinkContainer className={'links'}>
                 <WorkLink className={'link'} onClick={closeNavBar} currentpath={location.pathname} to='/'>Work</WorkLink>
                 <Link className={'link'} onClick={closeNavBar} currentpath={location.pathname} path={'/aboutme'} to='/aboutme'>About Me</Link>
                 <Link className={'link'} onClick={closeNavBar} currentpath={location.pathname} path={'/contact'} to='/contact'>Contact</Link>
@@ -67,7 +67,10 @@ function NavBar() {
 export default NavBar;
 
 const NavigationIcon = styled.img`
-    display: ${props => props.screenWidth <= 590 ? null: `none`};
+    display: none;
+    @media (max-width: 590px) {
+        display: block;
+    }
 `   
 
 const NavBarContainer = styled.div`
@@ -93,7 +96,10 @@ const NavBarContainer = styled.div`
 `
 
 const SocialContainer = styled.div`
-    display: ${props => props.screenWidth <= 590 ? `none`: null};
+    display: blobk;
+    @media (max-width: 590px) {
+        display: none;
+    }
 `
 
 const LogoLink = styled(NavLink)`
